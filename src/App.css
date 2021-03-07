@@ -1,38 +1,182 @@
-.App {
+@font-face{
+  font-family: "Product Sans";
+  src: url('./fonts/ProductSans-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face{
+  font-family: "Product Sans";
+  src: url('./fonts/ProductSans-Medium.ttf');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face{
+  font-family: "Product Sans";
+  src: url('./fonts/ProductSans-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Product Sans", sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #9C8E76;
+}
+.title-text-color {
+  color: #3F3631;
+}
+.text-center {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.red-text {
+  color: #EB5757;
+  margin: 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.gray-text-color {
+  color: #828282;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1 {
+  margin: 0;
+  font-size: 3.375rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1.125rem;
+  margin: 0.75rem auto;
+}
+h4, h5 {
+  font-weight: 500;
+}
+p {
+  line-height: 145%;
+  margin: 0;
+}
+main {
+  background-image: 
+    linear-gradient(
+      rgba(255, 255, 255, 0.7), 
+      rgba(255, 255, 255, 0.7)
+    ), 
+    url(./images/background.svg);
+  backdrop-filter: blur(100px);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.top-navbar {
+  padding: 1.5rem 7.639vw;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+}
+.logo {
+  flex: 10%;
+}
+.top-nav-links {
+  display: inline-flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex: 75%;
 }
-
-.App-link {
-  color: #61dafb;
+.menu-item {
+  padding: 0.5rem 1rem;
+  color: #000000;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cart-and-profile-image-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 15%;
+}
+.profile-picture {
+  background-image: url(./images/profile-img.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: drop-shadow(2px 10px 40px rgba(45, 65, 102, 0.1));
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+  border-radius: 50%;
+  margin-left: 2.5rem;
+  height: 3.125rem;
+  width: 3.125rem;
+}
+.main-section {
+  display: flex;
+  align-items: center;
+  padding: 5.375rem 0 0 7.639vw;
+}
+.highlighted-coffee-container {
+  display: inline-flex;
+  flex-direction: column;
+  flex: 20%;
+  margin: 0 1.25rem 0 0;
+}
+.highlighted-coffee-bag-img, 
+.small-coffee-card-img {
+  margin: 0 auto -7rem;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+}
+.enlarged-coffee-card, 
+.small-coffee-card {
+  background: #FFFFFF;
+  box-shadow: 2px 10px 40px rgba(45, 65, 102, 0.1);
+  border-radius: 0.625rem;
+  padding: 7rem 1.3125rem 2rem;
+}
+.enlarged-coffee-name {
+  margin: 0.75rem auto;
+}
+.quantity-and-price-container {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 1.375rem;
+  margin-top: 0.75rem;
+}
+.heading-paragraph {
+  margin: 1.25rem 0 3.125rem;
+  max-width: 31rem;
+}
+.main-heading-text-area {
+  margin: 0 0 3.5rem 5.375rem;
+}
+.main-text-and-small-coffee-cards-container {
+  flex: 80%;
+}
+.small-coffee-cards-group-container {
+  display: flex;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  padding-bottom: 5.375rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
+}
+.small-coffee-cards-group-container::-webkit-scrollbar{
+  display: none;
+}
+.small-coffee-card-container {
+  cursor: pointer;
+  margin: 0 1.25rem;
+  flex: 0 0 22%;
+  outline: none;
+}
+.small-coffee-card-container:hover .small-coffee-card, 
+.small-coffee-card-container:focus .small-coffee-card {
+  border: 2px solid #EB5757;
+  transition: all .4s ease-out;
+}
+.small-coffee-card {
+  text-align: center;
+  border: 2px solid transparent;
 }
