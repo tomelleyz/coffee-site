@@ -1,7 +1,7 @@
 import logo from '../images/logo.svg';
 import cart from '../images/shopping-cart-icon.svg';
 
-function TopNavbar() {
+function TopNavbar({ setIsMobileNavOpen }) {
   return (
     <nav className='top-navbar'>
       <div className='logo'>
@@ -20,6 +20,10 @@ function TopNavbar() {
       <div className='cart-and-profile-image-container'>
         <img src={cart} alt='shopping cart icon' />
         <div className='profile-picture'></div>
+      </div>
+
+      <div className='mobile-menu-btn'>
+        <button onClick={() => setIsMobileNavOpen(true)}>Menu</button>
       </div>
     </nav>
   )

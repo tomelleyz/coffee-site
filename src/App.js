@@ -4,6 +4,7 @@ import TopNavbar from './components/TopNavbar';
 import HighlightedCoffeeCard from './components/HighlightedCoffeeCard';
 import SmallCoffeeCard from './components/SmallCoffeeCard';
 import icedCoffeeBagImage from './images/iced-coffee-bag.png';
+import MobileNav from './components/MobileNav';
 
 function App() {
   const [ enlargedCoffeeType, setEnlargedCoffeeType] = useState({
@@ -14,6 +15,7 @@ function App() {
     price: 69.99, 
     id: 1,
   })
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
 
   const handleCoffeeCardClick = (coffeePack) => {
     setEnlargedCoffeeType(coffeePack)
@@ -21,7 +23,8 @@ function App() {
 
   return (
     <main>
-      <TopNavbar />
+      {isMobileNavOpen && <MobileNav isMobileNavOpen={isMobileNavOpen} setIsMobileNavOpen={setIsMobileNavOpen} />}
+      <TopNavbar setIsMobileNavOpen={setIsMobileNavOpen} />
       <div className='main-section'>
         <HighlightedCoffeeCard highlightedCoffeeType={enlargedCoffeeType} />
         <div className='main-text-and-small-coffee-cards-container'>

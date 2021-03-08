@@ -62,14 +62,15 @@ p {
 main {
   background-image: 
     linear-gradient(
-      rgba(255, 255, 255, 0.7), 
-      rgba(255, 255, 255, 0.7)
+      rgba(255, 255, 255, 0.5), 
+      rgba(255, 255, 255, 0.5)
     ), 
     url(./images/background.svg);
   backdrop-filter: blur(100px);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
 }
 .top-navbar {
   padding: 1.5rem 7.639vw;
@@ -85,7 +86,8 @@ main {
   justify-content: center;
   flex: 75%;
 }
-.menu-item {
+.menu-item, 
+.mobile-menu-item {
   padding: 0.5rem 1rem;
   color: #000000;
 }
@@ -106,6 +108,62 @@ main {
   margin-left: 2.5rem;
   height: 3.125rem;
   width: 3.125rem;
+}
+.mobile-menu-btn {
+  display: none;
+  flex: 10%;
+}
+.mobile-menu-btn, 
+.close-mobile-menu-btn {
+  text-align: right;
+}
+.mobile-menu-btn button, 
+.close-mobile-menu-btn button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  background-color: rgba(235, 87, 87, 0.1);
+  color: #EB5757;
+  font-family: 'Product Sans';
+  font-size: 1.125rem;
+  font-weight: 500; 
+  outline: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.mobile-menu-btn button:hover, 
+.mobile-menu-btn button:focus, 
+.close-mobile-menu-btn button:hover, 
+.close-mobile-menu-btn button:focus {
+  border: 1px solid #EB5757;
+}
+.mobile-nav {
+  display: none;
+  background-color: #FFFFFF;
+  border-radius: 0.625rem;
+  padding: 1.5rem;
+  margin: 1rem;
+  box-shadow: 2px 10px 40px rgba(45, 65, 102, 0.1);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.mobile-avatar-and-close-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mobile-cart-and-avatar {
+  display: inline-flex;
+  align-items: center;
+}
+.mobile-nav-links {
+  padding: 2rem 0;
+}
+.mobile-menu-item {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
 }
 .main-section {
   display: flex;
@@ -168,15 +226,51 @@ main {
 .small-coffee-card-container {
   cursor: pointer;
   margin: 0 1.25rem;
-  flex: 0 0 22%;
+  flex: 22%;
   outline: none;
+  scroll-snap-align: center;
 }
 .small-coffee-card-container:hover .small-coffee-card, 
 .small-coffee-card-container:focus .small-coffee-card {
-  border: 2px solid #EB5757;
+  border: 1px solid #EB5757;
   transition: all .4s ease-out;
 }
 .small-coffee-card {
   text-align: center;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
+}
+
+@media (max-width: 768px) {
+  .top-nav-links, 
+  .cart-and-profile-image-container {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: block;
+  }
+  .mobile-nav {
+    display: block;
+  }
+  .profile-picture {
+    margin: 0 2.5rem 0 0;
+  }
+  .main-section {
+    display: block;
+  }
+  .highlighted-coffee-container {
+    display: none;
+  }
+  .main-heading-text-area {
+    margin-left: 0;
+    padding-right: 7.639vw;
+  }
+  .small-coffee-card-container {
+    flex: 1 0 30%;
+  }
+}
+
+@media (max-width: 640px) {
+  .small-coffee-card-container {
+    flex: 1 0 60%;
+  }
 }
