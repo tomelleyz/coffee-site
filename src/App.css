@@ -214,6 +214,7 @@ main {
   display: flex;
   overflow-x: auto;
   flex-wrap: nowrap;
+  align-items: baseline;
   padding-bottom: 5.375rem;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
@@ -226,7 +227,7 @@ main {
 .small-coffee-card-container {
   cursor: pointer;
   margin: 0 1.25rem;
-  flex: 22%;
+  flex: 0 0 22%;
   outline: none;
   scroll-snap-align: center;
 }
@@ -265,12 +266,12 @@ main {
     padding-right: 7.639vw;
   }
   .small-coffee-card-container {
-    flex: 1 0 30%;
+    flex: 0 0 30%;
   }
 }
 
 @media (max-width: 640px) {
   .small-coffee-card-container {
-    flex: 1 0 60%;
+    flex: 0 0 60%;
   }
 }
